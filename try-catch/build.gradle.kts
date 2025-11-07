@@ -33,9 +33,8 @@ publishing {
             version = "1.0.0"
 
             afterEvaluate {
-                from(components["java"])
+                from(components["kotlin"])
             }
-            artifact(tasks["sourcesJar"])
         }
     }
 }
