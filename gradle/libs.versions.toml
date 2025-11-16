@@ -1,7 +1,9 @@
 [versions]
-agp = "8.7.3"
 kotlin = "1.9.24"
-kotlinJvm = "1.9.24"
+kotlin-runtime = "1.9.24"
+agp = "8.7.3"
+publish = "0.34.0"
+
 junit = "4.13.2"
 jetbrainsKotlinJvm = "1.9.24"
 
@@ -13,4 +15,5 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-runtime" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
