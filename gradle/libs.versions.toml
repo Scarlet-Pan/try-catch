@@ -1,7 +1,5 @@
 [versions]
 kotlin = "1.9.24"
-kotlin-runtime = "1.9.24"
-agp = "8.7.3"
 publish = "0.34.0"
 
 junit = "4.13.2"
@@ -11,7 +9,5 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-runtime" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
