@@ -2,9 +2,7 @@
 
 A coroutine-friendly, type-safe wrapper for enhanced error handling, extending the capabilities of `kotlin.runCatching`.
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
-[![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch) [![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/) [![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml) [![License](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
 
 ---
 
@@ -110,8 +108,6 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 Copyright © 2025 Scarlet Pan
 
----
-
 <br><br>
 
 <div align="center">
@@ -125,9 +121,7 @@ Copyright © 2025 Scarlet Pan
 
 一个协程友好的、类型安全的异常处理包装器，扩展了 `kotlin.runCatching` 的能力。
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
-[![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch) [![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/) [![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml) [![许可证](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
 
 ---
 
