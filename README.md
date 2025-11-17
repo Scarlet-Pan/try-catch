@@ -1,8 +1,11 @@
 # try-catch
 
-A coroutine-friendly, type-safe wrapper for enhanced error handling, extending the capabilities of `kotlin.runCatching`.
+A Kotlin extension that brings the elegance of `try-catch` to functional error handling—while **safely avoiding accidental capture of `CancellationException` in coroutines**. Use typed, chainable handlers with `runCatching` and never break structured concurrency again.
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch) [![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/) [![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml) [![License](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)
+[![Kotlin 1.6+](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![License](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
 
 ---
 
@@ -119,9 +122,12 @@ Copyright © 2025 Scarlet Pan
 
 # try-catch（中文）
 
-一个协程友好的、类型安全的异常处理包装器，扩展了 `kotlin.runCatching` 的能力。
+一种能像传统 `try-catch` 一样优雅处理异常的 Kotlin 扩展，在协程中**自动规避误捕获 `CancellationException` 的风险**，让你在使用 `runCatching` 时既能享受类型安全的链式异常处理，又不会意外中断协程取消流程。
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch) [![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/) [![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml) [![许可证](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)
+[![Kotlin 1.6+](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![许可证](https://img.shields.io/github/license/Scarlet-Pan/try-catch)](LICENSE)
 
 ---
 
@@ -226,3 +232,6 @@ suspend fun fetchConfig(): Config = runCatching {
 本项目采用 **MIT 许可证**，详情请参见 [LICENSE](LICENSE) 文件。
 
 版权所有 © 2025 Scarlet Pan
+- 贡献指南
+
+也欢迎随时告诉我！
