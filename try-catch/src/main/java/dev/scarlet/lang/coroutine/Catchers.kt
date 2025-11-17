@@ -49,20 +49,20 @@ fun Throwable.checkNonCancel() {
  *
  * Example:
  * ```kotlin
- * suspend fun getUserData(): User = runCatching {
- *     service.getUserData() // suspending call that may throw IllegalStateException
+ * suspend fun fetchConfig(): Config = runCatching {
+ *     remoteConfigService.getConfig() // suspending call that may throw IllegalStateException
  * } catchNonCancel { e: IllegalStateException ->
- *     Log.w(TAG, "Invalid user state, using default.", e)
- *     defaultUser
+ *     Log.w(TAG, "Invalid remote config state, using default.", e)
+ *     defaultConfig
  * } catchNonCancel { e ->
- *     Log.w(TAG, "Failed to load user, using default.", e)
- *     defaultUser
+ *     Log.w(TAG, "Failed to fetch config, using default.", e)
+ *     defaultConfig
  * }
  * ```
  */
 @JvmName("catchNonCancelFromResult")
 inline infix fun <T> Result<T>.catchNonCancel(transform: (e: IllegalStateException) -> T): Catcher<T> =
-    Catcher.of(this).recoverCatching<T, T> { e ->
+    Catcher.of(this).recoverCatching { e ->
         e.checkNonCancel()
         when (e) {
             is IllegalStateException -> transform(e)
@@ -78,11 +78,11 @@ inline infix fun <T> Result<T>.catchNonCancel(transform: (e: IllegalStateExcepti
  *
  * Example: Safely fetch data in a coroutine with a fallback for non-cancellation exceptions
  * ```kotlin
- * suspend fun getUserData(): User = runCatching {
- *     service.getUserData()
+ * suspend fun fetchConfig(): Config = runCatching {
+ *     remoteConfigService.getConfig()
  * } catchNonCancel { e ->
- *     Log.w(TAG, "Failed to load user, using default.", e)
- *     defaultUser
+ *     Log.w(TAG, "Failed to fetch config, using default.", e)
+ *     defaultConfig
  * }
  * ```
  *
@@ -102,22 +102,22 @@ infix fun <T> Result<T>.catchNonCancel(transform: (e: Exception) -> T): T =
  *
  * Example:
  * ```kotlin
- * suspend fun getUserData(): User = runCatching {
- *     service.getUserData() // suspending call that may throw IllegalStateException
+ * suspend fun fetchConfig(): Config = runCatching {
+ *     remoteConfigService.getConfig() // suspending call that may throw IllegalStateException
  * } catch { e: IOException ->
  *     throw e
  * } catchNonCancel { e: IllegalStateException ->
- *     Log.w(TAG, "Invalid user state, using default.", e)
- *     defaultUser
+ *     Log.w(TAG, "Invalid remote config state, using default.", e)
+ *     defaultConfig
  * } catchNonCancel { e ->
- *     Log.w(TAG, "Failed to load user, using default.", e)
- *     defaultUser
+ *     Log.w(TAG, "Failed to fetch config, using default.", e)
+ *     defaultConfig
  * }
  * ```
  */
 @JvmName("catchNonCancelIllegalStateFromCatcher")
 infix fun <T> Catcher<T>.catchNonCancel(transform: (e: IllegalStateException) -> T): Catcher<T> =
-    recover<T, T> { e ->
+    recover { e ->
         e.checkNonCancel()
         when (e) {
             is IllegalStateException -> transform(e)
@@ -133,14 +133,14 @@ infix fun <T> Catcher<T>.catchNonCancel(transform: (e: IllegalStateException) ->
  *
  * Example:
  * ```kotlin
- * suspend fun getUserData(): User = runCatching {
- *     service.getUserData() // suspending call that may throw IllegalStateException
+ * suspend fun fetchConfig(): Config = runCatching {
+ *     remoteConfigService.getConfig() // suspending call that may throw IllegalStateException
  * } catchNonCancel { e: IllegalStateException ->
- *     Log.w(TAG, "Invalid user state.", e)
- *     defaultUser
+ *     Log.w(TAG, "Invalid remote config state.", e)
+ *     defaultConfig
  * } catchNonCancel { e ->
- *     Log.w(TAG, "Fail to get user.", e)
- *     defaultUser
+ *     Log.w(TAG, "Fail to get config.", e)
+ *     defaultConfig
  * }
  * ```
  *
@@ -174,7 +174,7 @@ infix fun <T> Catcher<T>.catchNonCancel(transform: (e: Exception) -> T): T = get
 @Deprecated(MESSAGE, replaceWith = ReplaceWith(EXPRESSION, imports = [IMPORT]))
 @JvmName("catchIllegalStateFromCatcher")
 inline infix fun <T> Catcher<T>.catch(transform: (e: IllegalStateException) -> T): Catcher<T> =
-    recoverCatching<T, T> { e ->
+    recoverCatching { e ->
         when (e) {
             is IllegalStateException -> transform(e)
             else -> throw e
