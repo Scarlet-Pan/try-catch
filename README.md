@@ -2,24 +2,9 @@
 
 A coroutine-friendly, type-safe wrapper for enhanced error handling, extending the capabilities of `kotlin.runCatching`.
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
-
----
-
-## 📦 Install
-
-Add the dependency to your `build.gradle.kts`:
-
-```kotlin
-dependencies {
-    implementation("io.github.scarlet-pan:try-catch:1.0.0")
-}
-```
-
-> Compatible with Kotlin 1.6+ and JVM 8+.  
-> Requires `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` or higher.
+[[Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
+[[Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
+[[Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
 
 ---
 
@@ -64,6 +49,21 @@ suspend fun fetchConfig(): Config = runCatching {
 ```
 
 > 💡 **Best Practice**: Always prefer `catchNonCancel` over `catch` in `suspend` functions or any coroutine context.
+
+---
+
+## 📦 Install
+
+Add the dependency to your `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation("io.github.scarlet-pan:try-catch:1.0.0")
+}
+```
+
+> Compatible with Kotlin 1.6+ and JVM 8+.  
+> Requires `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` or higher.
 
 ---
 
@@ -115,24 +115,9 @@ MIT
 
 一个协程友好的、类型安全的异常处理包装器，扩展了 `kotlin.runCatching` 的能力。
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
-
----
-
-## 📦 安装
-
-在 `build.gradle.kts` 中添加依赖：
-
-```kotlin
-dependencies {
-    implementation("io.github.scarlet-pan:try-catch:1.0.0")
-}
-```
-
-> 兼容 Kotlin 1.6+ 和 JVM 8+。  
-> 需要 `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` 或更高版本。
+[[Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
+[[Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
+[[测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
 
 ---
 
@@ -177,6 +162,21 @@ suspend fun fetchConfig(): Config = runCatching {
 ```
 
 > 💡 **最佳实践**：在 `suspend` 函数或任何协程上下文中，始终优先使用 `catchNonCancel` 而非 `catch`。
+
+---
+
+## 📦 安装
+
+在 `build.gradle.kts` 中添加依赖：
+
+```kotlin
+dependencies {
+    implementation("io.github.scarlet-pan:try-catch:1.0.0")
+}
+```
+
+> 兼容 Kotlin 1.6+ 和 JVM 8+。  
+> 需要 `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` 或更高版本。
 
 ---
 
