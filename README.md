@@ -106,7 +106,9 @@ suspend fun fetchConfig(): Config = runCatching {
 
 ## 📄 License
 
-MIT
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+Copyright © 2025 Scarlet Pan
 
 ---
 
@@ -227,4 +229,6 @@ suspend fun fetchConfig(): Config = runCatching {
 
 ## 📄 许可证
 
-MIT
+本项目采用 **MIT 许可证**，详情请参见 [LICENSE](LICENSE) 文件。
+
+版权所有 © 2025 Scarlet Pan
