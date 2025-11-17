@@ -2,9 +2,9 @@
 
 A coroutine-friendly, type-safe wrapper for enhanced error handling, extending the capabilities of `kotlin.runCatching`.
 
-[[Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
-[[Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
-[[Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
+[![Test Status](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
 
 ---
 
@@ -62,8 +62,8 @@ dependencies {
 }
 ```
 
-> Compatible with Kotlin 1.6+ and JVM 8+.  
-> Requires `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` or higher.
+> ✅ Compatible with Kotlin 1.6+ and JVM 8+.  
+> ✅ Requires `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` or higher.
 
 ---
 
@@ -105,19 +105,27 @@ suspend fun fetchConfig(): Config = runCatching {
 ---
 
 ## 📄 License
+
 MIT
 
 ---
 
 <br><br>
 
+<div align="center">
+  <hr width="80%" />
+  <p><em>—— 中文文档 Chinese Documentation ——</em></p>
+  <hr width="80%" />
+</div>
+<br><br>
+
 # try-catch（中文）
 
 一个协程友好的、类型安全的异常处理包装器，扩展了 `kotlin.runCatching` 的能力。
 
-[[Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
-[[Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
-[[测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.scarlet-pan/try-catch?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.scarlet-pan/try-catch)  
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.6%2B-blue?logo=kotlin&logoColor=white)](https://kotlinlang.org/)  
+[![测试状态](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml/badge.svg)](https://github.com/Scarlet-Pan/try-catch/actions/workflows/test.yml)
 
 ---
 
@@ -129,8 +137,8 @@ MIT
 
 ```kotlin
 suspend fun fetchConfig(): Config = try {
-    remoteConfigService.getConfig() // Suspending call that may throw IllegalStateException
-} catch (e: Exception) { // ⚠️ Catches CancellationException — breaks structured concurrency!
+    remoteConfigService.getConfig() // 可能抛出 IllegalStateException 的挂起调用
+} catch (e: Exception) { // ⚠️ 会捕获 CancellationException — 破坏结构化并发！
     Log.w(TAG, "Failed to fetch config.", e)
     defaultConfig
 }
@@ -140,7 +148,7 @@ suspend fun fetchConfig(): Config = try {
 
 ```kotlin
 suspend fun fetchConfig(): Config = runCatching {
-    remoteConfigService.getConfig() // Suspending call that may throw IllegalStateException
+    remoteConfigService.getConfig() // 可能抛出 IllegalStateException 的挂起调用
 } catch { e -> // ❌ 协程中应避免：会处理 CancellationException（delicate API）
     Log.w(TAG, "Failed to fetch config.", e)
     defaultConfig
@@ -151,7 +159,7 @@ suspend fun fetchConfig(): Config = runCatching {
 
 ```kotlin
 suspend fun fetchConfig(): Config = runCatching {
-    remoteConfigService.getConfig() // Suspending call that may throw IllegalStateException
+    remoteConfigService.getConfig() // 可能抛出 IllegalStateException 的挂起调用
 } catchNonCancel { e: IllegalStateException ->
     Log.w(TAG, "Invalid remote config state.", e)
     defaultConfig
@@ -175,8 +183,8 @@ dependencies {
 }
 ```
 
-> 兼容 Kotlin 1.6+ 和 JVM 8+。  
-> 需要 `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` 或更高版本。
+> ✅ 兼容 Kotlin 1.6+ 和 JVM 8+。  
+> ✅ 需要 `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4` 或更高版本。
 
 ---
 
@@ -186,7 +194,7 @@ dependencies {
 
 ```kotlin
 runCatching {
-    // do something
+    // 执行某些操作
 } catch { e: IOException ->
     handleIOException(e)
 } catch { e ->
@@ -202,7 +210,7 @@ runCatching {
 
 ```kotlin
 suspend fun fetchConfig(): Config = runCatching {
-    remoteConfigService.getConfig() // Suspending call that may throw IllegalStateException
+    remoteConfigService.getConfig() // 可能抛出 IllegalStateException 的挂起调用
 } catchNonCancel { e: IllegalStateException ->
     Log.w(TAG, "Invalid remote config state.", e)
     defaultConfig
@@ -218,4 +226,5 @@ suspend fun fetchConfig(): Config = runCatching {
 ---
 
 ## 📄 许可证
+
 MIT
